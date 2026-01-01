@@ -229,7 +229,7 @@ export default function Footer() {
               <div>
                 Nalanda Nagar, Street Number 21,<br />
                 Hyderguda, Upperpally, Attapur<br />
-                Hyderabad, Telangana 500048
+                Telangana 500048
               </div>
             </div>
             <div style={contactItemStyle}>
@@ -246,12 +246,12 @@ export default function Footer() {
             <div style={contactItemStyle}>
               <span>✉️</span>
               <a 
-                href="mailto:info@alphabetz.in" 
+                href="mailto:info@alphabetzchoiceschool.com" 
                 style={linkStyle(hoveredLink === "email")}
                 onMouseEnter={() => setHoveredLink("email")}
                 onMouseLeave={() => setHoveredLink("")}
               >
-                info@alphabetz.in
+                info@alphabetzchoiceschool.Community
               </a>
             </div>
             <div style={contactItemStyle}>

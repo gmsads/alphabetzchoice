@@ -399,7 +399,7 @@ export default function Header() {
           boxSizing: "border-box"
         }}>
           <span style={{ fontSize: "14px" }}>📞 9000894995</span>
-          {!isMobile && <span style={{ fontSize: "14px" }}>✉️ info@alphabetz.in</span>}
+          {!isMobile && <span style={{ fontSize: "14px" }}>✉️ info@alphabetzchoiceschool.com</span>}
         </div>
       </div>
 
@@ -433,7 +433,7 @@ export default function Header() {
             onClick={() => scrollToSection("home")}
           >
             <div style={{
-              fontSize: isMobile ? "11px" : "13px",
+              fontSize: isMobile ? "12px" : "14px",
               letterSpacing: "1px",
               fontWeight: 700,
               color: "#6b7280",

@@ -148,29 +148,43 @@ export default function About() {
     padding: isMobile ? "36px" : "56px",
   };
 
-  const reasonGrid = {
-    display: "grid",
-    gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
-    gap: "28px",
+  const gridLayout = {
+    display: 'grid',
+    gridTemplateColumns: window.innerWidth > 768 ? '1fr 1fr' : '1fr',
+    gap: '33px',
+    alignItems: 'center'
   };
 
-  const reasonItem = {
-    display: "flex",
-    gap: "14px",
-    alignItems: "center",
+  const reasonItemStyle = {
+    display: 'flex',
+    alignItems: 'flex-start',
+    gap: '28px',
+    marginBottom: '30px'
   };
 
-  const badge = (pink) => ({
-    width: "34px",
-    height: "34px",
-    borderRadius: "50%",
-    background: pink ? "#ec4899" : "#facc15",
-    color: pink ? "white" : "#1e3a8a",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    fontWeight: "bold",
-  });
+
+  const numberBadgeStyle = {
+    width: '32px',
+    height: '32px',
+    borderRadius: '50%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexShrink: 0,
+    marginTop: '4px',
+    fontWeight: 'bold',
+    color: 'white'
+  };
+
+  const reasonTitleStyle = {
+    fontWeight: 'bold',
+    marginBottom: '9px'
+  };
+
+  const reasonTextStyle = {
+    color: '#dbeafe',
+    fontSize: '17px'
+  };
 
   return (
     <section id="about" style={sectionStyle}>
@@ -264,20 +278,50 @@ export default function About() {
             6 Reasons to Join Alphabetz Choice
           </h2>
 
-          <div style={reasonGrid}>
-            {[
-              "Curiosity & creativity",
-              "Language & thinking skills",
-              "Emotional development",
-              "Motor skill growth",
-              "School readiness",
-              "Overall child development",
-            ].map((text, i) => (
-              <div key={i} style={reasonItem}>
-                <div style={badge(i % 2 !== 0)}>{i + 1}</div>
-                <p style={{ margin: 0 }}>{text}</p>
-              </div>
-            ))}
+    
+          <div style={gridLayout}>
+            <div>
+              {[1, 2, 3].map((num) => (
+                <div key={num} style={reasonItemStyle}>
+                  <div style={{...numberBadgeStyle, backgroundColor: num % 2 === 1 ? '#facc15' : '#ec4899', color: num % 2 === 1 ? '#1e3a8a' : 'white'}}>
+                    {num}
+                  </div>
+                  <div>
+                    <h4 style={reasonTitleStyle}>
+                      {num === 1 && "Nurturing Children's Curiosity"}
+                      {num === 2 && "Promotes Language & Cognitive Skills"}
+                      {num === 3 && "Promotes Social & Emotional Development"}
+                    </h4>
+                    <p style={reasonTextStyle}>
+                      {num === 1 && "Creative focus on individuals, encouraging exploration"}
+                      {num === 2 && "Implementing best practices from the West"}
+                      {num === 3 && "Practical learning methods, child care & happiness"}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div>
+              {[4, 5, 6].map((num) => (
+                <div key={num} style={reasonItemStyle}>
+                  <div style={{...numberBadgeStyle, backgroundColor: num % 2 === 1 ? '#facc15' : '#ec4899', color: num % 2 === 1 ? '#1e3a8a' : 'white'}}>
+                    {num}
+                  </div>
+                  <div>
+                    <h4 style={reasonTitleStyle}>
+                      {num === 4 && "Helps in Developing Motor Skills"}
+                      {num === 5 && "Prepares Children for Primary"}
+                      {num === 6 && "Growth Opportunity"}
+                    </h4>
+                    <p style={reasonTextStyle}>
+                      {num === 4 && "Smart teaching approach focusing on thinking capabilities"}
+                      {num === 5 && "Leadership development and comprehensive curriculum"}
+                      {num === 6 && "Complete development from preschool to primary education"}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

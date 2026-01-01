@@ -211,18 +211,6 @@ export default function Contact() {
     gap: '16px'
   };
 
-  const whatsappButtonStyle = {
-    backgroundColor: '#facc15',
-    color: '#1e3a8a',
-    padding: '16px 32px',
-    borderRadius: '24px',
-    fontWeight: 'bold',
-    textDecoration: 'none',
-    cursor: 'pointer',
-    border: 'none',
-    fontSize: '16px',
-    transition: 'all 0.3s'
-  };
 
   const callButtonStyle = {
     backgroundColor: '#10b981',
@@ -285,6 +273,18 @@ export default function Contact() {
     gap: '6px'
   };
 
+  const whatsappButtonStyle = {
+    backgroundColor: "#25D366",
+    color: "white",
+    padding: "14px 20px",
+    borderRadius: "30px",
+    textDecoration: "none",
+    fontWeight: "600",
+    boxShadow: "0 8px 20px rgba(37, 211, 102, 0.35)",
+  };
+
+
+
   return (
     <section id="contact" style={sectionStyle}>
       <div style={containerStyle}>
@@ -302,8 +302,8 @@ export default function Contact() {
           {/* Contact Information Column */}
           <div>
             {/* Location Card */}
-            <div 
-              style={contactItemStyle} 
+            <div
+              style={contactItemStyle}
               onMouseEnter={(e) => e.currentTarget.style.boxShadow = '0 10px 15px rgba(0, 0, 0, 0.15)'}
               onMouseLeave={(e) => e.currentTarget.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)'}
             >
@@ -321,10 +321,8 @@ export default function Contact() {
 
               {/* Google Map */}
               <div style={mapContainerStyle}>
-                <div style={mapOverlayStyle}>
-                  📍 Alphabetz Choice School
-                </div>
-                
+               
+
                 <iframe
                   title="Alphabetz International Preschool Attapur"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3808.183353438089!2d78.4114106!3d17.3625544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb97934063c3b7%3A0x81141515d0bdd163!2sAlphabetz%20International%20Preschool%20Attapur!5e0!3m2!1sen!2sin!4v1734960000000"
@@ -377,7 +375,7 @@ export default function Contact() {
             </div>
 
             {/* Phone Number Card */}
-            <div 
+            <div
               style={contactItemStyle}
               onMouseEnter={(e) => e.currentTarget.style.boxShadow = '0 10px 15px rgba(0, 0, 0, 0.15)'}
               onMouseLeave={(e) => e.currentTarget.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)'}
@@ -394,7 +392,7 @@ export default function Contact() {
             </div>
 
             {/* Email Card */}
-            <div 
+            <div
               style={contactItemStyle}
               onMouseEnter={(e) => e.currentTarget.style.boxShadow = '0 10px 15px rgba(0, 0, 0, 0.15)'}
               onMouseLeave={(e) => e.currentTarget.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)'}
@@ -403,12 +401,43 @@ export default function Contact() {
                 <div style={{ ...iconBoxStyle, backgroundColor: '#fce7f3' }}>✉️</div>
                 <div>
                   <h3 style={contactItemTitleStyle}>Email Address</h3>
-                  <a href="mailto:info@alphabetzchoice.in" style={contactItemLinkStyle}>
-                  info@alphabetzchoice.in
+                  <a href="mailto:info@alphabetzchoiceschool.com" style={contactItemLinkStyle}>
+                    info@alphabetzchoiceschool.com
                   </a>
                 </div>
               </div>
             </div>
+
+            {/* Website Card */}
+            <div
+              style={contactItemStyle}
+              onMouseEnter={(e) =>
+              (e.currentTarget.style.boxShadow =
+                "0 10px 15px rgba(0, 0, 0, 0.15)")
+              }
+              onMouseLeave={(e) =>
+              (e.currentTarget.style.boxShadow =
+                "0 4px 6px rgba(0, 0, 0, 0.1)")
+              }
+            >
+              <div style={contactItemHeaderStyle}>
+                <div style={{ ...iconBoxStyle, backgroundColor: "#e0f2fe" }}>
+                  🌐
+                </div>
+                <div>
+                  <h3 style={contactItemTitleStyle}>Website</h3>
+                  <a
+                    href="https://www.alphabetzchoiceschool.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={contactItemLinkStyle}
+                  >
+                    www.alphabetzchoiceschool.com
+                  </a>
+                </div>
+              </div>
+            </div>
+
           </div>
 
           {/* Admission Enquiry Form */}
@@ -541,12 +570,25 @@ export default function Contact() {
               href="https://wa.me/919000894995?text=Hi%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20at%20Alphabetz%20Choice%20School"
               target="_blank"
               rel="noopener noreferrer"
-              style={whatsappButtonStyle}
-              onMouseEnter={(e) => e.target.style.transform = 'scale(1.05)'}
-              onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
+              style={{
+                ...whatsappButtonStyle,
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "10px",
+                transition: "transform 0.25s ease",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
+              onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
             >
-              💬 Contact Us on WhatsApp
+              <i
+                className="fa-brands fa-whatsapp"
+                style={{ fontSize: "22px", color: "white" }}
+              />
+              Contact Us on WhatsApp
             </a>
+
+
+
             <a
               href="tel:9000894995"
               style={callButtonStyle}

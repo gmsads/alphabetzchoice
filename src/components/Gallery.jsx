@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
-import D2 from '../assets/D2.jpeg';
+import D2 from '../assets/D2.jpeg';import D1 from '../assets/D1.jpeg';
+import D4 from '../assets/D4.jpeg';import D3 from '../assets/D3.jpeg';
+// import D5 from '../assets/D5.jpeg';
 import D5 from '../assets/D5.jpeg';
 import B1 from '../assets/B1.jpeg';
 import B2 from '../assets/B2.jpeg';
@@ -91,10 +93,15 @@ import G2 from '../assets/G2.jpeg';
 import G3 from '../assets/G3.jpeg';
 import G4 from '../assets/G4.jpeg';
 import G5 from '../assets/G5.jpeg';
+import U1 from '../assets/U1.jpeg';import U2 from '../assets/U2.jpeg';
+import U3 from '../assets/U3.jpeg';import U4 from '../assets/U4.jpeg';
+import U5 from '../assets/U5.jpeg';import U6 from '../assets/U6.jpeg';import U7 from '../assets/U7.jpeg';
+import PTM1 from '../assets/PTM1.jpeg'; import PTM2 from '../assets/PTM2.jpeg';import PTM3 from '../assets/PTM3.jpeg';
+import PTM4 from '../assets/PTM4.jpeg';import PTM5 from '../assets/PTM5.jpeg';
 
 export default function Gallery() {
   const [activeCategory, setActiveCategory] = useState('festivals');
-  const [activeFestival, setActiveFestival] = useState('dussehra');
+  const [activeFestival, setActiveFestival] = useState('krishnashtami');
   const [currentSlideIndex, setCurrentSlideIndex] = useState({});
   const slideIntervalRef = useRef({});
   const [isMobile, setIsMobile] = useState(false);
@@ -116,9 +123,10 @@ export default function Gallery() {
   // CORRECTED gallery categories with proper IDs
   const galleryCategories = [
     { id: 'independenceDay', name: 'Independence Day', icon: '✌️', color: '#FF9800' },
-    { id: 'friendshipDay', name: 'Friendship Day', icon: '🕊️', color: '#4CAF50' },
-    { id: 'graduationDay', name: 'Graduation Day', icon: '👶', color: '#FF4081' }, // Fixed: 'graduationDay' not 'graduction'
+    { id: 'friendshipDay', name: 'Friendship Day', icon: '🤝', color: '#4CAF50' },
+    { id: 'graduationDay', name: 'Graduation Day', icon:'🎓', color: '#FF4081' }, // Fixed: 'graduationDay' not 'graduction'
     { id: 'teachersDay', name: 'Teachers\' Day', icon: '👩‍🏫', color: '#2196F3' },
+    { id: 'parentTeachersDayMeeting', name: 'Parent Teachers Day Meeting', icon: '👩‍🏫', color: '#2196F3' },
     { id: 'festivals', name: 'Festivals', icon: '🎊', color: '#FF6B8B' },
     { id: 'fashionDay', name: 'Fashion Day', icon: '👗', color: '#9C27B0' },
     { id: 'trip', name: 'Field Trip', icon: '🚌', color: '#673AB7' },
@@ -145,92 +153,100 @@ export default function Gallery() {
   // Festival images
   const festivalImages = {
     sankranti: [
-      { id: 1, url: SK1, title: 'Kite Flying' },
-      { id: 2, url: SK2, title: 'Traditional Celebration' },
-      { id: 3, url: SK3, title: 'Colorful Kites' },
-      { id: 4, url: SK4, title: 'Festival Joy' },
-      { id: 5, url: SK5, title: 'Sankranti Crafts' },
+      { id: 1, url: SK1,},
+      { id: 2, url: SK2, },
+      { id: 3, url: SK3,  },
+      { id: 4, url: SK4, },
+      { id: 5, url: SK5, },
     ],
     dussehra: [
-      { id: 1, url: D2, title: 'Ravana Effigy' },
-      { id: 2, url: D5, title: 'Dussehra Celebration' },
-      { id: 3, url: 'https://images.unsplash.com/photo-1631713068277-ff8f78b2f379?w=800&h=600&fit=crop', title: 'Cultural Program' },
-      { id: 4, url: 'https://images.unsplash.com/photo-1631713068078-5c9b8b5b5b5b?w=800&h=600&fit=crop', title: 'Traditional Dance' },
-      { id: 5, url: 'https://images.unsplash.com/photo-1631713068127-ff8f78b2f379?w=800&h=600&fit=crop', title: 'Festival Decorations' },
+      { id: 1, url: D2,},
+      { id: 2, url: D5, },
+      { id: 3, url: D1},
+      { id: 4, url: D4, },
+      { id: 5, url: D3,  },
     ],
     diwali: [
-      { id: 1, url: DP1, title: 'Diya Decoration' },
-      { id: 2, url: DP2, title: 'Rangoli Art' },
-      { id: 3, url: DP3, title: 'Fireworks' },
-      { id: 4, url: DP4, title: 'Diwali Celebrations' },
-      { id: 5, url: DP5, title: 'Traditional Lamps' },
+      { id: 1, url: DP1, },
+      { id: 2, url: DP2, },
+      { id: 3, url: DP3,},
+      { id: 4, url: DP4,  },
+      { id: 5, url: DP5, },
     ],
     krishnashtami: [
-      { id: 1, url: K4, title: 'Krishna Decoration' },
-      { id: 2, url: K2, title: 'Dahi Handi' },
-      { id: 3, url: K5, title: 'Traditional Dress' },
-      { id: 4, url: K1, title: 'Festival Joy' },
-      { id: 5, url: K3, title: 'Cultural Dance' },
+      { id: 1, url: K4,  },
+      { id: 2, url: K2,  },
+      { id: 3, url: K5, },
+      { id: 4, url: K1, },
+      { id: 5, url: K3,},
     ],
     christmas: [
-      { id: 1, url: C1, title: 'Christmas Tree' },
-      { id: 2, url: C2, title: 'Santa Claus Visit' },
-      { id: 3, url: C3, title: 'Gift Exchange' },
-      { id: 4, url: C4, title: 'Christmas Carols' },
-      { id: 5, url: C5, title: 'Decorations' },
+      { id: 1, url: C1, },
+      { id: 2, url: C2,  },
+      { id: 3, url: C3,  },
+      { id: 4, url: C4, },
+      { id: 5, url: C5,  },
     ],
     ugadi: [
-      { id: 1, url: 'https://images.unsplash.com/photo-1612231639299-6c7a87b3dd6b?w=800&h=600&fit=crop', title: 'Ugadi Pachadi' },
-      { id: 2, url: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop', title: 'Traditional Celebration' },
-      { id: 3, url: 'https://images.unsplash.com/photo-1612231639345-4d46d4e9c5b8?w=800&h=600&fit=crop', title: 'New Year Celebration' },
-      { id: 4, url: 'https://images.unsplash.com/photo-1612231639247-3b0c7b1c5b5f?w=800&h=600&fit=crop', title: 'Festival Decorations' },
-      { id: 5, url: 'https://images.unsplash.com/photo-1612231639307-6c7a87b3dd6c?w=800&h=600&fit=crop', title: 'Cultural Programs' },
+      { id: 1, url:U1, },
+      { id: 2, url: U2, },
+      { id: 3, url: U3,  },
+      { id: 4, url: U4, },
+      { id: 5, url:U5 ,},
+      { id: 6, url: U6, },
+      { id: 7, url:U7 ,},
     ],
     ganeshChaturthi: [
-      { id: 1, url: GC1, title: 'Ganesh Idol' },
-      { id: 2, url: GC2, title: 'Traditional Puja' },
-      { id: 3, url: GC3, title: 'Festival Celebration' },
-      { id: 4, url: GC4, title: 'Cultural Programs' },
-      { id: 5, url: GC5, title: 'Community Gathering' },
+      { id: 1, url: GC1, },
+      { id: 2, url: GC2, },
+      { id: 3, url: GC3, },
+      { id: 4, url: GC4,  },
+      { id: 5, url: GC5, },
     ],
     bonalu: [
-      { id: 1, url: B1, title: 'Bonalu Procession' },
-      { id: 2, url: B2, title: 'Traditional Rituals' },
-      { id: 3, url: B3, title: 'Festival Decorations' },
-      { id: 4, url: 'https://images.unsplash.com/photo-1560844894-2c1bae3c44b3?w=800&h=600&fit=crop', title: 'Cultural Dance' },
-      { id: 5, url: 'https://images.unsplash.com/photo-1547825407-12a43531c2f7?w=800&h=600&fit=crop', title: 'Community Gathering' },
+      { id: 1, url: B1, },
+      { id: 2, url: B2,  },
+      { id: 3, url: B3,  },
+    
     ],
   };
 
   // CORRECTED other images with proper IDs
   const otherImages = {
     independenceDay: [
-      { id: 1, url: I1, title: 'Independence Day Celebration' },
-      { id: 2, url: I2, title: 'Flag Hosting Ceremony' },
-      { id: 3, url: I3, title: 'Patriotic Dance' },
-      { id: 4, url: I4, title: 'Freedom Fighters Skit' },
-      { id: 5, url: 'https://images.unsplash.com/photo-1621277223235-294594f5c0b8?w=800&h=600&fit=crop', title: 'National Anthem' },
+      { id: 1, url: I1, },
+      { id: 2, url: I2,},
+      { id: 3, url: I3,},
+      { id: 4, url: I4,  },
+  
     ],
     friendshipDay: [ // Fixed: 'friendshipDay' matches category ID
-      { id: 1, url: FR1, title: 'Friendship Day Celebration' },
-      { id: 2, url: FR2, title: 'Friendship Bands' },
-      { id: 3, url: FR3, title: 'Friendship Activities' },
-      { id: 4, url: FR4, title: 'Friendship Crafts' },
-      { id: 5, url: FR5, title: 'Friendship Fun' },
+      { id: 1, url: FR1, },
+      { id: 2, url: FR2, },
+      { id: 3, url: FR3,  },
+      { id: 4, url: FR4, },
+      { id: 5, url: FR5,},
     ],
     graduationDay: [ // Fixed: 'graduationDay' matches category ID
-      { id: 1, url: G1, title: 'Graduation Ceremony' },
-      { id: 2, url: G2, title: 'Graduation Caps' },
-      { id: 3, url: G3, title: 'Certificate Distribution' },
-      { id: 4, url: G4, title: 'Graduation Stage' },
-      { id: 5, url: G5, title: 'Graduation Memories' },
+      { id: 1, url: G1,  },
+      { id: 2, url: G2,  },
+      { id: 3, url: G3, },
+      { id: 4, url: G4,},
+      { id: 5, url: G5, },
     ],
     teachersDay: [
-      { id: 1, url: TH1, title: 'Teachers\' Day Celebration' },
-      { id: 2, url: TH2, title: 'Thank You Cards' },
-      { id: 3, url: TH3, title: 'Cultural Program' },
-      { id: 4, url: TH4, title: 'Gift Giving' },
-      { id: 5, url: TH5, title: 'Special Assembly' },
+      { id: 1, url: TH1,},
+      { id: 2, url: TH2,  },
+      { id: 3, url: TH3, },
+      { id: 4, url: TH4,  },
+      { id: 5, url: TH5, },
+    ],
+    parentTeachersDayMeeting: [
+      { id: 1, url: PTM1,},
+      { id: 2, url: PTM2,  },
+      { id: 3, url: PTM3, },
+      { id: 4, url: PTM4,  },
+      { id: 5, url: PTM5, },
     ],
     fashionDay: [
       { id: 1, url: F1, title: 'Fashion Show 1' },
@@ -247,53 +263,53 @@ export default function Gallery() {
       { id: 5, url: YG5, title: 'Yoga Session 5' },
     ],
     fathersDay: [ // Fixed: 'fathersDay' not 'fathersDay' (was already correct)
-      { id: 1, url: N1, title: 'Father\'s Day Celebration' },
-      { id: 2, url: N2, title: 'Dad\'s Day Out' },
-      { id: 3, url: N3, title: 'Family Fun Time' },
-      { id: 4, url: N4, title: 'Special Moments' },
-      { id: 5, url: N5, title: 'Father-Child Bonding' },
+      { id: 1, url: N1,},
+      { id: 2, url: N2,  },
+      { id: 3, url: N3, },
+      { id: 4, url: N4, },
+      { id: 5, url: N5,  },
     ],
     mothersDay: [
-      { id: 1, url: M1, title: 'Mother\'s Day Cards' },
-      { id: 2, url: M2, title: 'Special Celebration' },
-      { id: 3, url: M3, title: 'Gift Making' },
-      { id: 4, url: M4, title: 'Family Photos' },
-      { id: 5, url: M5, title: 'Love and Hugs' },
+      { id: 1, url: M1,  },
+      { id: 2, url: M2,  },
+      { id: 3, url: M3,},
+      { id: 4, url: M4, },
+      { id: 5, url: M5,},
     ],
     grandparentsDay: [
-      { id: 1, url: GP1, title: 'Grandparents\' Day' },
-      { id: 2, url: GP2, title: 'Family Stories' },
-      { id: 3, url: GP3, title: 'Traditional Games' },
-      { id: 4, url: GP4, title: 'Special Visit' },
-      { id: 5, url: GP5, title: 'Love and Wisdom' },
+      { id: 1, url: GP1, },
+      { id: 2, url: GP2, },
+      { id: 3, url: GP3, },
+      { id: 4, url: GP4, },
+      { id: 5, url: GP5, },
     ],
     communityHelpers: [
-      { id: 1, url: CH1, title: 'Police Officer Visit' },
-      { id: 2, url: CH2, title: 'Doctor Session' },
-      { id: 3, url: CH3, title: 'Firefighter Talk' },
-      { id: 4, url: CH4, title: 'Postman Visit' },
-      { id: 5, url: CH5, title: 'Community Helpers Day' },
+      { id: 1, url: CH1,},
+      { id: 2, url: CH2,  },
+      { id: 3, url: CH3, },
+      { id: 4, url: CH4, },
+      { id: 5, url: CH5, },
     ],
     yellowDay: [
-      { id: 1, url: Y1, title: 'Yellow Day Celebration' },
-      { id: 2, url: Y2, title: 'Yellow Crafts' },
-      { id: 3, url: Y3, title: 'Yellow Theme Activities' },
-      { id: 4, url: Y2, title: 'Learning Colors' },
-      { id: 5, url: Y3, title: 'Group Activities' },
+      { id: 1, url: Y1, },
+      { id: 2, url: Y2, },
+      { id: 3, url: Y3, },
+      { id: 4, url: Y2, },
+      { id: 5, url: Y3, },
     ],
     redDay: [
-      { id: 1, url: R1, title: 'Red Day Celebration' },
-      { id: 2, url: R2, title: 'Red Crafts' },
-      { id: 3, url: R3, title: 'Red Theme Activities' },
-      { id: 4, url: R4, title: 'Learning About Red' },
-      { id: 5, url: R5, title: 'Red Day Fun' },
+      { id: 1, url: R1,  },
+      { id: 2, url: R2, },
+      { id: 3, url: R3,  },
+      { id: 4, url: R4,  },
+      { id: 5, url: R5,},
     ],
     trip: [
-      { id: 1, url: T1, title: 'Field Trip - Zoo Visit' },
-      { id: 2, url: T2, title: 'Learning Excursion' },
-      { id: 3, url: T3, title: 'Museum Trip' },
-      { id: 4, url: T4, title: 'Educational Tour' },
-      { id: 5, url: T5, title: 'Field Trip Memories' },
+      { id: 1, url: T1, },
+      { id: 2, url: T2, },
+      { id: 3, url: T3,  },
+      { id: 4, url: T4,  },
+      { id: 5, url: T5, },
     ],
   };
 
