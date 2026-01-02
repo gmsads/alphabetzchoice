@@ -46,8 +46,8 @@ export default function Footer() {
     gridTemplateColumns: isMobile
       ? "1fr"
       : isTablet
-      ? "repeat(2, 1fr)"
-      : "repeat(4, 1fr)",
+        ? "repeat(2, 1fr)"
+        : "repeat(4, 1fr)",
     gap: "32px",
     marginBottom: "32px",
   };
@@ -160,10 +160,10 @@ export default function Footer() {
           {/* LOGO & DESCRIPTION */}
           <div style={columnStyle}>
             <div style={logoContainerStyle}>
-              <img 
-                src={logo} 
-                alt="Alphabetz Choice Logo" 
-                style={logoStyle} 
+              <img
+                src={logo}
+                alt="Alphabetz Choice Logo"
+                style={logoStyle}
               />
               <p style={descriptionStyle}>
                 Nurturing young minds with quality education and care from
@@ -178,8 +178,8 @@ export default function Footer() {
             <ul style={listStyle}>
               {["home", "about", "programs", "facilities", "gallery", "contact"].map(
                 (item) => (
-                  <li 
-                    key={item} 
+                  <li
+                    key={item}
                     style={listItemStyle}
                     onMouseEnter={() => setHoveredLink(item)}
                     onMouseLeave={() => setHoveredLink("")}
@@ -206,8 +206,8 @@ export default function Footer() {
             <ul style={listStyle}>
               {["Day Care", "Play Group", "Nursery", "Junior KG", "Senior KG", "Class I to V"].map(
                 (item) => (
-                  <li 
-                    key={item} 
+                  <li
+                    key={item}
                     style={listItemStyle}
                     onMouseEnter={() => setHoveredLink(item)}
                     onMouseLeave={() => setHoveredLink("")}
@@ -234,8 +234,8 @@ export default function Footer() {
             </div>
             <div style={contactItemStyle}>
               <span>📞</span>
-              <a 
-                href="tel:9000894995" 
+              <a
+                href="tel:9000894995"
                 style={linkStyle(hoveredLink === "phone")}
                 onMouseEnter={() => setHoveredLink("phone")}
                 onMouseLeave={() => setHoveredLink("")}
@@ -245,15 +245,29 @@ export default function Footer() {
             </div>
             <div style={contactItemStyle}>
               <span>✉️</span>
-              <a 
-                href="mailto:info@alphabetzchoiceschool.com" 
+              <a
+                href="mailto:info@alphabetzchoiceschool.com"
                 style={linkStyle(hoveredLink === "email")}
                 onMouseEnter={() => setHoveredLink("email")}
                 onMouseLeave={() => setHoveredLink("")}
               >
-                info@alphabetzchoiceschool.Community
+                info@alphabetzchoiceschool.Com
               </a>
             </div>
+            <div style={contactItemStyle}>
+              <span>🌐</span>
+              <a
+                href="https://alphabetzchoiceschool.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={linkStyle(hoveredLink === "website")}
+                onMouseEnter={() => setHoveredLink("website")}
+                onMouseLeave={() => setHoveredLink("")}
+              >
+                alphabetzchoiceschool.com
+              </a>
+            </div>
+
             <div style={contactItemStyle}>
               <span>🕐</span>
               <div>
@@ -274,8 +288,8 @@ export default function Footer() {
               onClick={() => handleSocialClick("Facebook", "https://www.facebook.com/profile.php?id=61585765226814")}
               onMouseEnter={(e) => e.currentTarget.style.transform = "scale(1.1) translateY(-3px)"}
               onMouseLeave={(e) => e.currentTarget.style.transform = "scale(1)"}
-              style={{ 
-                ...socialButtonStyle(false), 
+              style={{
+                ...socialButtonStyle(false),
                 color: "#1877F2",
                 backgroundColor: "white",
               }}
@@ -304,8 +318,8 @@ export default function Footer() {
               onClick={() => handleSocialClick("YouTube", "https://www.youtube.com/@Alphabetz_Attapur")}
               onMouseEnter={(e) => e.currentTarget.style.transform = "scale(1.1) translateY(-3px)"}
               onMouseLeave={(e) => e.currentTarget.style.transform = "scale(1)"}
-              style={{ 
-                ...socialButtonStyle(false), 
+              style={{
+                ...socialButtonStyle(false),
                 color: "#FF0000",
                 backgroundColor: "white",
               }}
